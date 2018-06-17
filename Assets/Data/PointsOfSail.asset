@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3f1948c20180344b4fa42a378dca60, type: 3}
+  m_Name: PointsOfSail
+  m_EditorClassIdentifier: 
+  SheetName: Assets/Data/PointsOfSail.xlsx
+  WorksheetName: PointsOfSail
+  dataArray:
+  - name: SCloseHauled
+    optimalspeed: 0.8
+    sailanglemin: 172.1
+    sailanglemax: 180
+    rangemin: 35
+    rangemax: 60
+  - name: SCloseReach
+    optimalspeed: 1.4
+    sailanglemin: 162.1
+    sailanglemax: 172
+    rangemin: 61
+    rangemax: 80
+  - name: SBeamReach
+    optimalspeed: 1.7
+    sailanglemin: 135.1
+    sailanglemax: 162
+    rangemin: 81
+    rangemax: 100
+  - name: SBroadReach
+    optimalspeed: 1.5
+    sailanglemin: 120.1
+    sailanglemax: 135
+    rangemin: 101
+    rangemax: 160
+  - name: SRun
+    optimalspeed: 1.1
+    sailanglemin: 105
+    sailanglemax: 120
+    rangemin: 161
+    rangemax: 180
+  - name: PRun
+    optimalspeed: 1.1
+    sailanglemin: 240.1
+    sailanglemax: 255
+    rangemin: 181
+    rangemax: 200
+  - name: PBroadReach
+    optimalspeed: 1.5
+    sailanglemin: 225.1
+    sailanglemax: 240
+    rangemin: 201
+    rangemax: 260
+  - name: PBeamReach
+    optimalspeed: 1.7
+    sailanglemin: 198.1
+    sailanglemax: 225
+    rangemin: 261
+    rangemax: 280
+  - name: PCloseReach
+    optimalspeed: 1.4
+    sailanglemin: 188.1
+    sailanglemax: 198
+    rangemin: 281
+    rangemax: 300
+  - name: PCloseHauled
+    optimalspeed: 0.8
+    sailanglemin: 180.1
+    sailanglemax: 188.1
+    rangemin: 301
+    rangemax: 325
