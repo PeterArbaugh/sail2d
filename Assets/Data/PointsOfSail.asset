@@ -15,61 +15,61 @@ MonoBehaviour:
   WorksheetName: PointsOfSail
   dataArray:
   - name: SCloseHauled
-    optimalspeed: 0.8
+    optimalspeed: 1
     sailanglemin: 172.1
     sailanglemax: 180
     rangemin: 35
     rangemax: 60
   - name: SCloseReach
-    optimalspeed: 1.4
+    optimalspeed: 1
     sailanglemin: 162.1
     sailanglemax: 172
     rangemin: 61
     rangemax: 80
   - name: SBeamReach
-    optimalspeed: 1.7
+    optimalspeed: 1
     sailanglemin: 135.1
     sailanglemax: 162
     rangemin: 81
     rangemax: 100
   - name: SBroadReach
-    optimalspeed: 1.5
+    optimalspeed: 1
     sailanglemin: 120.1
     sailanglemax: 135
     rangemin: 101
     rangemax: 160
   - name: SRun
-    optimalspeed: 1.1
+    optimalspeed: 1
     sailanglemin: 105
     sailanglemax: 120
     rangemin: 161
     rangemax: 180
   - name: PRun
-    optimalspeed: 1.1
+    optimalspeed: 1
     sailanglemin: 240.1
     sailanglemax: 255
     rangemin: 181
     rangemax: 200
   - name: PBroadReach
-    optimalspeed: 1.5
+    optimalspeed: 1
     sailanglemin: 225.1
     sailanglemax: 240
     rangemin: 201
     rangemax: 260
   - name: PBeamReach
-    optimalspeed: 1.7
+    optimalspeed: 1
     sailanglemin: 198.1
     sailanglemax: 225
     rangemin: 261
     rangemax: 280
   - name: PCloseReach
-    optimalspeed: 1.4
+    optimalspeed: 1
     sailanglemin: 188.1
     sailanglemax: 198
     rangemin: 281
     rangemax: 300
   - name: PCloseHauled
-    optimalspeed: 0.8
+    optimalspeed: 1
     sailanglemin: 180.1
     sailanglemax: 188.1
     rangemin: 301

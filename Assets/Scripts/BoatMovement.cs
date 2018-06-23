@@ -39,11 +39,16 @@ public class BoatMovement : MonoBehaviour {
     [SerializeField]
     float posAngle;
 
+    //Health
+    public float health;
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         adjacentPointsOfSail = new List<PointsOfSailData>();
         InvokeRepeating("getOptimalPointOfSail", 0f, 0.2f);
+
+        health = 100;
 	}
 
     // Update is called once per frame
@@ -123,10 +128,7 @@ public class BoatMovement : MonoBehaviour {
         }
         //check actual point of sail and apply speed
         float f = CheckActualPOS(currentPointOfSail, adjacentPointsOfSail, posAngle, sailAngle);
-        Debug.Log("Modifier: " + f);
-        Debug.Log("Optimal speed: " + optimalSpeed);
         rb.AddForce(transform.up * f * optimalSpeed);
-        Debug.Log("Force: " + (transform.up * f * optimalSpeed));
         
        
     }
@@ -136,12 +138,9 @@ public class BoatMovement : MonoBehaviour {
     {
         if (optimal.Rangemin <= h && h <= optimal.Rangemax)
         {
-            Debug.Log("Optimal");
             hSpeedModifier = optimal.Optimalspeed;
             finalModifier = hSpeedModifier * CheckSailAngle(optimal, adjacent, sA);
-            Debug.Log("Final modifier = " + finalModifier);
-            return finalModifier;
-            
+            return finalModifier;     
         }
         else
         {
@@ -189,10 +188,20 @@ public class BoatMovement : MonoBehaviour {
             {
                 if (item.Sailanglemin <= sA && sA <= item.Sailanglemax)
                 {
-                    return 1.0F;
+                    return 0.7F;
                 }
             }
-            return 0.5F;
+            return 0.3F;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        health -= 10;
+        if (health <= 0)
+        {
+            //Trigger game over
+            Debug.Log("Game over");
         }
     }
 }
