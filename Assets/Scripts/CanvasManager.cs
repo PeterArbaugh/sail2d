@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour {
 
@@ -9,13 +10,16 @@ public class CanvasManager : MonoBehaviour {
     Animator ironsAnim;
     public GameObject player;
     public bool status;
+    public GameObject hIndicator;
+    Text hText;
 
 
 	// Use this for initialization
 	void Start () {
         //Irons indicator
         ironsAnim = irons.GetComponent<Animator>();
-	}
+        hText = hIndicator.GetComponent<Text>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,6 +34,9 @@ public class CanvasManager : MonoBehaviour {
         {
             ironsAnim.SetBool("InIrons", false);
         }
+
+        //Health indicator
+        hText.text = "Health: " + player.GetComponent<BoatMovement>().health.ToString();
 		
 	}
 }

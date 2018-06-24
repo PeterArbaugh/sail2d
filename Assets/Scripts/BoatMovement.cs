@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BoatMovement : MonoBehaviour {
 
@@ -62,12 +63,12 @@ public class BoatMovement : MonoBehaviour {
         heading = 360 - Mathf.Round(transform.rotation.eulerAngles.z);
 
         // -1 inverts the rudder controls to feel more natural
-        rb.AddTorque(Input.GetAxis("Rudder") * torqueForce * -1);
+        rb.AddTorque(Input.GetAxis("Horizontal") * torqueForce * -1);
 
         //Boom movement & clamping to reasonable angles
         //This got weird so the sail starts with a 180 degree rotation in the editor.
         //The pivot of the sprite is set to the bottom of the sprite.
-        sail.transform.Rotate(0, 0, Input.GetAxis("Boom") * Time.deltaTime * sailRotationSpeed);
+        sail.transform.Rotate(0, 0, Input.GetAxis("Vertical") * Time.deltaTime * sailRotationSpeed * -1);
         sailAngle = sail.transform.localEulerAngles.z;
 
         //Set posAngle to lock sail according to wind direction
@@ -197,11 +198,24 @@ public class BoatMovement : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        health -= 10;
-        if (health <= 0)
+            health -= 10;
+            if (health <= 0)
+            {
+                //Trigger game over
+                SceneManager.LoadScene("GameOver");
+            }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Goal")
         {
-            //Trigger game over
-            Debug.Log("Game over");
+            Debug.Log("Level Complete");
+            SceneManager.LoadScene("LevelComplete");
+        }
+        else
+        {
+            Debug.Log("Other trigger");
         }
     }
 }

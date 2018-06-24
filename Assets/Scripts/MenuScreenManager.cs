@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOverScene : MonoBehaviour {
+public class MenuScreenManager : MonoBehaviour {
 
     [SerializeField]
     Button restart;
+    [SerializeField]
     Button exit;
 
     void Start()
@@ -16,18 +17,15 @@ public class GameOverScene : MonoBehaviour {
         exit.onClick.AddListener(ExitScene);
     }
 
-    // Update is called once per frame
-	void Update () {
-		
-	}
-
     void RestartScene()
     {
+        Debug.Log("Load Scene");
         //SceneManager.LoadScene("");
     }
 
     void ExitScene()
     {
+        Debug.Log("Exit Scene");
         Application.Quit();
     }
 }
