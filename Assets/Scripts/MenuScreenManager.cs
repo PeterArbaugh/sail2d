@@ -20,7 +20,7 @@ public class MenuScreenManager : MonoBehaviour {
     void RestartScene()
     {
         Debug.Log("Load Scene");
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("East");
     }
 
     void ExitScene()
